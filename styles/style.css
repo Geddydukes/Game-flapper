@@ -1,9 +1,10 @@
 
 body{
     background: black;
+    background-image: url(https://cameronscookware.com/wp-content/uploads/2019/12/pokemon-pixel-background-inspirational-8-bit-day-wallpaper-wallpapersafari-ideas-of-pokemon-pixel-background.png);
 }
 
-.screener {
+/* .screener {
     overflow: hidden;
 }
 
@@ -24,6 +25,9 @@ px;
     100% {
         transform: translate3d(-1692px,0,0);
     }
+} */
+.gamebody{
+    background: black;
 }
 
 
@@ -31,10 +35,37 @@ px;
 h1{
     text-align: center;
     font-size: 6em;
+    color: black;
+    border: 1px solid gold;
 
 }
 
 .playerSprite{
     position: relative;
     float: center;
+}
+
+.ps-score{
+    color: ivory;
+    font-size: 30px;
+    justify-content: flex-end;
+    align-self: flex-start;
+    position: relative;
+    float: right;
+}
+
+span{
+    justify-content: space-around;
+}
+.button-box{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.button-box button{
+    font-size: 1em;
+    margin: 0 20px;
+    
+    /* text-align: center; */
 }

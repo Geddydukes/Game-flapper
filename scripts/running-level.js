@@ -1,16 +1,13 @@
-var myGamePiece;
-var myObstacles;
-var myObstacle2;
-var myObstacle3;
-var newObstacle;
+let newObstacle;
 let myBackground;
 const obstacleArray = [];
 let distanceAccumulator = 0;
+let scores = 0;
 
 function startGame() {
-    myGamePiece = new component(100,100,"./assets/mewtwo.png",400,150,"image");
-    myBackground = new component(1000000,700,"https://cameronscookware.com/pokemon-pixel-background/pokemon-pixel-background-unique-pokemon-clouds-pixel-art-desktop-background-combination",0,0,"image");
-    createObstacles();
+    myGamePiece = new component(75,75,"./assets/mewtwo.png",300,150,"image");
+    myBackground = new component(1500,700,"https://cameronscookware.com/pokemon-pixel-background/pokemon-pixel-background-unique-pokemon-clouds-pixel-art-desktop-background-combination",0,0,"image");
+    playerScore = new component( "30px" ,"Ariel", "black", 1200, 100, "text");
     myGameArea.start();
 }
 
@@ -26,12 +23,16 @@ function component(width, height, color, x, y, type) {
     this.y = y;
     this.speedX = -1;
     this.speedY = 0;
-    this.gravity = 2;
+    this.gravity = 4;
     this.gravitySpeed = 0;
     this.update = function(){
     ctx = myGameArea.context;
     if(type == "image") {
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+    } else if (this.type == "text") {
+        ctx.font = this.width + " " + this.height;
+        ctx.fillStyle = color;
+        ctx.fillText(this.text, this.x, this.y);
     } else {
     ctx.fillStyle = color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -72,7 +73,7 @@ function component(width, height, color, x, y, type) {
 const myGameArea = {
     canvas: document.createElement("canvas"),
     start: function() {
-        this.canvas.width = 1400;
+        this.canvas.width = 1450;
         this.canvas.height = 700;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
@@ -104,51 +105,57 @@ for(let i=0;i<obstacleArray.length;i++){
         if (myGamePiece.crashWith(obstacleArray[i])) {
             myGameArea.stop();
             return;
-        }
+        }  
 }
+    if(myGamePiece.x===300){
+        createObstacles();
+    }
     myGameArea.clear();
-    myBackground.speedX = -1;
+    myBackground.speedX = 0;
     myBackground.newPos();
     myBackground.update();
     myGameArea.frameNo +=1;
+    scoreCounter();
     for(let i=0;i<obstacleArray.length; i++) {
-        
             obstacleArray[i].update();
             obstacleArray[i].x -=2;
-
-
-
     }
-    obstacleArray.x -=2;
+    if(scores===100){
+        myGameArea.stop();
+    }
+    obstacleArray.x -=4;
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
     if (myGameArea.keys && myGameArea.keys[32]) {
-        myGamePiece.speedY = -4;   
+        myGamePiece.speedY = -8;   
     }
     myGamePiece.newPos();
     myGamePiece.update();
     obstacleArray.gravitySpeed = 0;
     obstacleArray.gravity = 0;
-
-    
 }
+
+
 function createObstacles() {
     for(let i=0;i<1;i++){
         const positionX = 500;
-        const newerObstacle1 = new component(80, Math.ceil(Math.random()*150) + 200, "./assets/Warp_pipe1.png", positionX + distanceAccumulator, 450, "image");
+        const newerObstacle1 = new component(80, 550, "./assets/Warp_pipe1.png", positionX + distanceAccumulator, Math.ceil(Math.random()*200) + 450, "image");
         obstacleArray.push(newerObstacle1);
-        const newerObstacle2 = new component(80, Math.ceil(Math.random()*300) + 100,"./assets/Warp_pipe.png", positionX + distanceAccumulator, 0, "image");
+        const newerObstacle2 = new component(80, Math.ceil(Math.random()*200) + 200, "./assets/Warp_pipe.png", positionX + distanceAccumulator, 0, "image");
         obstacleArray.push(newerObstacle2);
         distanceAccumulator += positionX;
     }
 }
 
-// document.body.addEventListener('click', function(){
-//     startGame();
-// })
+function scoreCounter() {
+if(myGameArea.frameNo%100===0) {
+    scores++;
+    console.log(scores);
+    $('.ps-score').html("Score:"+scores);
+}
+}
 
-
+startGame();
 
 
 console.log('scripts works');
-
