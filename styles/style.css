@@ -35,9 +35,7 @@ px;
 h1{
     text-align: center;
     font-size: 6em;
-    color: black;
-    border: 1px solid gold;
-
+    color: purple;
 }
 
 .playerSprite{
@@ -60,12 +58,29 @@ span{
 .button-box{
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    padding-top: 90px;
 }
 
 .button-box button{
-    font-size: 1em;
+    font-size: 2em;
     margin: 0 20px;
-    
-    /* text-align: center; */
+    color: goldenrod;
+    border-radius: 50px;
+}
+
+article{
+display: flex;
+justify-content: center;
+ margin: 30px;
+ text-align: center;
+ font-size: 28px;
+ color: purple;
+ padding: 40px;
+ 
+}
+p{
+    align-content: center;
+    align-self: center;
+    max-width: 600px;
+    border: 2px dotted goldenrod;
 }
