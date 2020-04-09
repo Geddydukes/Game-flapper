@@ -8,10 +8,8 @@ const obstacleArray = [];
 let distanceAccumulator = 0;
 
 function startGame() {
-    myGamePiece = new component(100,100,"//img.pokemondb.net/sprites/black-white/back-normal/mewtwo.png",400,150,"image");
-    // myObstacle = new component(80, 1000, "https://ya-webdesign.com/transparent250_/flappy-bird-background-png-9.png", 1300, 400, "image");
-    // newObstacle = new component(80, 400,"https://ya-webdesign.com/transparent250_/flappy-bird-pipe-png-1.png",1350,0,"image")
-    myBackground = new component(1000000,700,"https://cameronscookware.com/wp-content/uploads/2019/12/pokemon-pixel-background-unique-pokemon-clouds-pixel-art-desktop-background-combination-of-pokemon-pixel-background.png",0,0,"image");
+    myGamePiece = new component(100,100,"./assets/mewtwo.png",400,150,"image");
+    myBackground = new component(1000000,700,"https://cameronscookware.com/pokemon-pixel-background/pokemon-pixel-background-unique-pokemon-clouds-pixel-art-desktop-background-combination",0,0,"image");
     createObstacles();
     myGameArea.start();
 }
@@ -121,10 +119,6 @@ for(let i=0;i<obstacleArray.length;i++){
 
 
     }
-    // myObstacle.update();
-    // newObstacle.update();
-    // myObstacle.x -= 2;
-    // newObstacle.x -= 2;
     obstacleArray.x -=2;
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
@@ -133,18 +127,17 @@ for(let i=0;i<obstacleArray.length;i++){
     }
     myGamePiece.newPos();
     myGamePiece.update();
-    // newObstacle.gravitySpeed = 0;
     obstacleArray.gravitySpeed = 0;
     obstacleArray.gravity = 0;
 
     
 }
 function createObstacles() {
-    for(let i=0;i<50;i++){
-        const positionX = 700;
-        const newerObstacle1 = new component(80, 400, "https://ya-webdesign.com/transparent250_/flappy-bird-background-png-9.png", positionX + distanceAccumulator, 400, "image");
+    for(let i=0;i<1;i++){
+        const positionX = 500;
+        const newerObstacle1 = new component(80, Math.ceil(Math.random()*150) + 200, "./assets/Warp_pipe1.png", positionX + distanceAccumulator, 450, "image");
         obstacleArray.push(newerObstacle1);
-        const newerObstacle2 = new component(80, 400,"https://ya-webdesign.com/transparent250_/flappy-bird-pipe-png-1.png", positionX + distanceAccumulator, -200, "image");
+        const newerObstacle2 = new component(80, Math.ceil(Math.random()*300) + 100,"./assets/Warp_pipe.png", positionX + distanceAccumulator, 0, "image");
         obstacleArray.push(newerObstacle2);
         distanceAccumulator += positionX;
     }
