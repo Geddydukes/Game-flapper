@@ -1,0 +1,40 @@
+
+body{
+    background-image: url(https://cameronscookware.com/wp-content/uploads/2019/12/pokemon-pixel-background-unique-pokemon-clouds-pixel-art-desktop-background-combination-of-pokemon-pixel-background.png);
+}
+
+.screener {
+    overflow: hidden;
+}
+
+.background-slide{
+    background-image: url(https://cameronscookware.com/wp-content/uploads/2019/12/pokemon-pixel-background-inspirational-8-bit-day-wallpaper-wallpapersafari-ideas-of-pokemon-pixel-background.png);
+    height: 750px;
+    width: 1000
+px;
+    float: inherit;
+    background-position: center bottom;
+    animation: slide 0s linear infinite;
+}
+
+@keyframes slide{
+    0%{
+        transform: translate3d(0,0,0);
+    }
+    100% {
+        transform: translate3d(-1692px,0,0);
+    }
+}
+
+
+
+h1{
+    text-align: center;
+    font-size: 6em;
+
+}
+
+.playerSprite{
+    position: relative;
+    float: center;
+}
