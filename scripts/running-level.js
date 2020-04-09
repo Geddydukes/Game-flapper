@@ -5,13 +5,14 @@ var myObstacle3;
 var newObstacle;
 let myBackground;
 const obstacleArray = [];
+let distanceAccumulator = 0;
 
 function startGame() {
-    myGamePiece = new component(55,55,"//img.pokemondb.net/sprites/black-white/back-normal/mewtwo.png",400,150,"image");
-    myObstacle = new component(80, 1000, "https://ya-webdesign.com/transparent250_/flappy-bird-background-png-9.png", 1300, 400, "image");
-    newObstacle = new component(80, 400,"https://ya-webdesign.com/transparent250_/flappy-bird-pipe-png-1.png",1350,0,"image")
-    createObstacles();
+    myGamePiece = new component(100,100,"//img.pokemondb.net/sprites/black-white/back-normal/mewtwo.png",400,150,"image");
+    // myObstacle = new component(80, 1000, "https://ya-webdesign.com/transparent250_/flappy-bird-background-png-9.png", 1300, 400, "image");
+    // newObstacle = new component(80, 400,"https://ya-webdesign.com/transparent250_/flappy-bird-pipe-png-1.png",1350,0,"image")
     myBackground = new component(1000000,700,"https://cameronscookware.com/wp-content/uploads/2019/12/pokemon-pixel-background-unique-pokemon-clouds-pixel-art-desktop-background-combination-of-pokemon-pixel-background.png",0,0,"image");
+    createObstacles();
     myGameArea.start();
 }
 
@@ -101,7 +102,7 @@ function everyInterval(n) {
 }
 
 function updateGameArea() {
-for(i=0;i<obstacleArray.length;i++){
+for(let i=0;i<obstacleArray.length;i++){
         if (myGamePiece.crashWith(obstacleArray[i])) {
             myGameArea.stop();
             return;
@@ -112,36 +113,49 @@ for(i=0;i<obstacleArray.length;i++){
     myBackground.newPos();
     myBackground.update();
     myGameArea.frameNo +=1;
-    for(i=0;i<myObstacle.length; i++) {
-        if (myGameArea.frameNo == 1 || everyInterval(600)){
-        obstacleArray[i].update();
-        }
+    for(let i=0;i<obstacleArray.length; i++) {
+        
+            obstacleArray[i].update();
+            obstacleArray[i].x -=2;
+
+
+
     }
-    myObstacle.update();
-    newObstacle.update();
-    myObstacle.x -= 2;
-    newObstacle.x -= 2;
+    // myObstacle.update();
+    // newObstacle.update();
+    // myObstacle.x -= 2;
+    // newObstacle.x -= 2;
     obstacleArray.x -=2;
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
     if (myGameArea.keys && myGameArea.keys[32]) {
-        myGamePiece.speedY = -4;
-        
+        myGamePiece.speedY = -4;   
     }
     myGamePiece.newPos();
     myGamePiece.update();
-    newObstacle.gravitySpeed = 0;
+    // newObstacle.gravitySpeed = 0;
     obstacleArray.gravitySpeed = 0;
     obstacleArray.gravity = 0;
 
     
 }
 function createObstacles() {
-    for(i=0;i<50;i++){
-        const newerObstacle = new component(80, 1000, "https://ya-webdesign.com/transparent250_/flappy-bird-background-png-9.png", 1300, 400, "image");
-        obstacleArray.push(newerObstacle);
+    for(let i=0;i<50;i++){
+        const positionX = 700;
+        const newerObstacle1 = new component(80, 400, "https://ya-webdesign.com/transparent250_/flappy-bird-background-png-9.png", positionX + distanceAccumulator, 400, "image");
+        obstacleArray.push(newerObstacle1);
+        const newerObstacle2 = new component(80, 400,"https://ya-webdesign.com/transparent250_/flappy-bird-pipe-png-1.png", positionX + distanceAccumulator, -200, "image");
+        obstacleArray.push(newerObstacle2);
+        distanceAccumulator += positionX;
     }
 }
+
+// document.body.addEventListener('click', function(){
+//     startGame();
+// })
+
+
+
 
 console.log('scripts works');
 
