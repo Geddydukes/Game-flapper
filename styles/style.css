@@ -59,7 +59,7 @@ display: none;
 justify-content: center;
  margin: 30px;
  text-align: center;
- font-size: 28px;
+ font-size: 24px;
  color: purple;
  padding: 40px;
  
@@ -68,7 +68,7 @@ p{
     align-content: center;
     align-self: center;
     max-width: 600px;
-    border: 2px dotted goldenrod;
+    border: 1px dotted white;
     font-family: "Comic Sans MS", cursive, sans-serif
 }
 .game-name{
