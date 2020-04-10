@@ -152,6 +152,3 @@ if(myGameArea.frameNo%100===0) {
 }
 
 startGame();
-
-
-console.log('scripts works');
