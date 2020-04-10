@@ -137,7 +137,7 @@ function createObstacles() {
         const positionX = 500;
         const newerObstacle1 = new component(80, 550, "./assets/Warp_pipe1.png", positionX + distanceAccumulator, Math.ceil(Math.random()*200) + 450, "image");
         obstacleArray.push(newerObstacle1);
-        const newerObstacle2 = new component(80, Math.ceil(Math.random()*200) + 200, "./assets/Warp_pipe.png", positionX + distanceAccumulator, 0, "image");
+        const newerObstacle2 = new component(80, Math.ceil(Math.random()*200) + 160, "./assets/Warp_pipe.png", positionX + distanceAccumulator, 0, "image");
         obstacleArray.push(newerObstacle2);
         distanceAccumulator += positionX;
     }
