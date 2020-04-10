@@ -6,7 +6,7 @@ let scores = 0;
 
 function startGame() {
     myGamePiece = new component(75,75,"./assets/mewtwo.png",300,150,"image");
-    myBackground = new component(1500,700,"https://cameronscookware.com/pokemon-pixel-background/pokemon-pixel-background-unique-pokemon-clouds-pixel-art-desktop-background-combination",0,0,"image");
+    myBackground = new component(1500,700,"https://cameronscookware.com/wp-content/uploads/2019/12/pokemon-pixel-background-inspirational-8-bit-day-wallpaper-wallpapersafari-ideas-of-pokemon-pixel-background.png",0,0,"image");
     playerScore = new component( "30px" ,"Ariel", "black", 1200, 100, "text");
     myGameArea.start();
 }
@@ -29,10 +29,6 @@ function component(width, height, color, x, y, type) {
     ctx = myGameArea.context;
     if(type == "image") {
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
-    } else if (this.type == "text") {
-        ctx.font = this.width + " " + this.height;
-        ctx.fillStyle = color;
-        ctx.fillText(this.text, this.x, this.y);
     } else {
     ctx.fillStyle = color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -104,7 +100,7 @@ function updateGameArea() {
 for(let i=0;i<obstacleArray.length;i++){
         if (myGamePiece.crashWith(obstacleArray[i])) {
             myGameArea.stop();
-            return;
+            return window.location.href="./gameover.html";
         }  
 }
     if(myGamePiece.x===300){

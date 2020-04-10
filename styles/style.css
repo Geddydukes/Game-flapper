@@ -1,6 +1,7 @@
 
 body{
     background-image: url(https://cameronscookware.com/wp-content/uploads/2019/12/pokemon-pixel-background-inspirational-8-bit-day-wallpaper-wallpapersafari-ideas-of-pokemon-pixel-background.png);
+    position: relative;
 }
 
 /* .screener {
@@ -35,6 +36,7 @@ h1{
     text-align: center;
     font-size: 6em;
     color: purple;
+    font-family: "Comic Sans MS", cursive, sans-serif
 }
 
 .playerSprite{
@@ -58,6 +60,7 @@ span{
     display: flex;
     justify-content: center;
     padding-top: 90px;
+    
 }
 
 .button-box button{
@@ -65,10 +68,11 @@ span{
     margin: 0 20px;
     color: goldenrod;
     border-radius: 50px;
+    font-family: "Comic Sans MS", cursive, sans-serif
 }
 
 article{
-display: flex;
+display: none;
 justify-content: center;
  margin: 30px;
  text-align: center;
@@ -82,10 +86,12 @@ p{
     align-self: center;
     max-width: 600px;
     border: 2px dotted goldenrod;
+    font-family: "Comic Sans MS", cursive, sans-serif
 }
 
 .gameover{
-    background-image: url(/assets/Game_over2.png);
+    /* background-image: url(/assets/Game_over2.png); */
+    background: black;
 }
 .loser{
     color: red;
@@ -100,4 +106,7 @@ p{
 .game-over-button button {
     font-size: 2em;
     border-radius: 50px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-color: red;
+
 }
