@@ -23,7 +23,7 @@ function component(width, height, color, x, y, type) {
     this.y = y;
     this.speedX = -1;
     this.speedY = 0;
-    this.gravity = 4;
+    this.gravity = 6;
     this.gravitySpeed = 0;
     this.update = function(){
     ctx = myGameArea.context;
@@ -119,11 +119,11 @@ for(let i=0;i<obstacleArray.length;i++){
     if(scores===100){
         myGameArea.stop();
     }
-    obstacleArray.x -=4;
+    obstacleArray.x -=6;
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
     if (myGameArea.keys && myGameArea.keys[32]) {
-        myGamePiece.speedY = -8;   
+        myGamePiece.speedY = -12;   
     }
     myGamePiece.newPos();
     myGamePiece.update();

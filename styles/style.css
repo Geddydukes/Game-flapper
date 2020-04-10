@@ -4,33 +4,9 @@ body{
     position: relative;
 }
 
-/* .screener {
-    overflow: hidden;
-}
-
-.background-slide{
-    background-image: url(https://cameronscookware.com/wp-content/uploads/2019/12/pokemon-pixel-background-inspirational-8-bit-day-wallpaper-wallpapersafari-ideas-of-pokemon-pixel-background.png);
-    height: 750px;
-    width: 1000
-px;
-    float: inherit;
-    background-position: center bottom;
-    animation: slide 0s linear infinite;
-}
-
-@keyframes slide{
-    0%{
-        transform: translate3d(0,0,0);
-    }
-    100% {
-        transform: translate3d(-1692px,0,0);
-    }
-} */
 .gamebody{
     background: black;
 }
-
-
 
 h1{
     text-align: center;
@@ -88,9 +64,11 @@ p{
     border: 2px dotted goldenrod;
     font-family: "Comic Sans MS", cursive, sans-serif
 }
+.game-name{
+    float: left;
+}
 
 .gameover{
-    /* background-image: url(/assets/Game_over2.png); */
     background: black;
 }
 .loser{
@@ -108,5 +86,23 @@ p{
     border-radius: 50px;
     font-family: "Comic Sans MS", cursive, sans-serif;
     background-color: red;
+
+}
+.game-winner{
+    color: gold;
+}
+
+.button-box-game-winner {
+    display: flex;
+    justify-content: center;
+    padding-top: 90px;
+}
+
+.game-winner-button {
+    font-size: 2em;
+    border-radius: 50px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-color: gold;
+    color: whitesmoke;
 
 }
