@@ -49,6 +49,7 @@ span{
     font-size: 2em;
     margin: 0 20px;
     color: goldenrod;
+    background-color: purple;
     border-radius: 50px;
     font-family: "Comic Sans MS", cursive, sans-serif
 }
