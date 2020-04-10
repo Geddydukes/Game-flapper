@@ -153,3 +153,4 @@ if(myGameArea.frameNo%100===0) {
 }
 
 startGame();
+
