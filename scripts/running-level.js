@@ -100,7 +100,7 @@ function updateGameArea() {
 for(let i=0;i<obstacleArray.length;i++){
         if (myGamePiece.crashWith(obstacleArray[i])) {
             myGameArea.stop();
-            return window.location.href="./gameover.html";
+            return window.location.href="gameover.html";
         }  
 }
     if(myGamePiece.x===300){
