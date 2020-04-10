@@ -14,6 +14,12 @@ h1{
     color: purple;
     font-family: "Comic Sans MS", cursive, sans-serif
 }
+h1{
+    text-align: center;
+    font-size: 3em;
+    color: purple;
+    font-family: "Comic Sans MS", cursive, sans-serif
+}
 
 .playerSprite{
     position: relative;
