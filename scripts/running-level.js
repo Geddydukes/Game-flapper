@@ -118,6 +118,7 @@ for(let i=0;i<obstacleArray.length;i++){
     }
     if(scores===100){
         myGameArea.stop();
+        return window.location.href="game-winner.html";
     }
     obstacleArray.x -=6;
     myGamePiece.speedX = 0;
