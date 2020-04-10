@@ -1,6 +1,5 @@
 
 body{
-    background: black;
     background-image: url(https://cameronscookware.com/wp-content/uploads/2019/12/pokemon-pixel-background-inspirational-8-bit-day-wallpaper-wallpapersafari-ideas-of-pokemon-pixel-background.png);
 }
 
@@ -83,4 +82,22 @@ p{
     align-self: center;
     max-width: 600px;
     border: 2px dotted goldenrod;
+}
+
+.gameover{
+    background-image: url(/assets/Game_over2.png);
+}
+.loser{
+    color: red;
+}
+
+.game-over-button{
+    display: flex;
+    justify-content: center;
+    padding-top: 90px;
+}
+
+.game-over-button button {
+    font-size: 2em;
+    border-radius: 50px;
 }
