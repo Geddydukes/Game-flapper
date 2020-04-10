@@ -133,7 +133,7 @@ for(let i=0;i<obstacleArray.length;i++){
 
 
 function createObstacles() {
-    for(let i=0;i<50;i++){
+    for(let i=0;i<1;i++){
         const positionX = 500;
         const newerObstacle1 = new component(80, 550, "./assets/Warp_pipe1.png", positionX + distanceAccumulator, Math.ceil(Math.random()*200) + 470, "image");
         obstacleArray.push(newerObstacle1);
